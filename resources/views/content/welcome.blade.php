@@ -17,7 +17,7 @@
             <!-- Styles -->
             <style>
                 html, body {
-                    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.4)),url('images/2.jpg');
+                    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('images/2.jpg');
                     font-family: 'Raleway', sans-serif;
                     font-weight: 900;
                     color:#fff;
@@ -70,7 +70,7 @@
         <body>
                 <div class="content">
                     <div class="title m-b-md">
-                        parc Des Princes Resturant<hr>Welcome ..! <br><br>
+                        <br>parc Des Princes Resturant<hr>Welcome ..!
                     </div>
                 </div>
         @endsection

@@ -16,9 +16,9 @@
 
             <style>
                 html, body {
-                    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)),url('images/1.jfif');
+                    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1)),url('images/Ocean-View-Oceana-Restaurant-4.jpg');
                     background-size:cover;
-                    /* font-size:20px; */
+                    height:1000px;
                 }
                 h1{
                     font-size:70px
