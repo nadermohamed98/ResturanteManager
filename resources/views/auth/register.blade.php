@@ -65,7 +65,7 @@
                             <label for="phone_number" class="col-md-4 control-label">Phone number</label>
 
                             <div class="col-md-6">
-                                <input id="phone_number" type="text" class="form-control"  name="phone_number" required>
+                                <input id="phone_number" type="text" class="form-control"  name="phone_number" placeholder="01---------" required>
                             </div>
                         </div>
                         
@@ -73,7 +73,7 @@
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
-                            <input id="address" type="text" class="form-control" name="address" required>
+                            <input id="address" type="text" class="form-control" name="address" placeholder="123 main st" required>
                             </div>
                         </div>
 

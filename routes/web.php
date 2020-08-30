@@ -41,7 +41,7 @@ Route::get('/content/readymeals', function(){
 
 Route::get('/logout',function(){
     Auth::logout();
-    return view('/welcome');
+    return view('/content.welcome');
 });
 
 Auth::routes();
