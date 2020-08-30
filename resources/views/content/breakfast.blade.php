@@ -37,8 +37,7 @@
             </style>
         </head>
         <body>
-            <h1 style="color:#fff;text-align:center;
-                    font-family:Algerian" >Make Your Breakfast</h1><br>
+            <h1 style="color:#fff;text-align:center;font-family:Algerian" >Make Your Breakfast</h1><br>
             <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
                 <h3 style="color:rgba(255,255,255,1)">Main meal</h3>
                 <select>            

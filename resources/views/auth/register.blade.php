@@ -62,6 +62,25 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="phone_number" class="col-md-4 control-label">Phone number</label>
+
+                            <div class="col-md-6">
+                                <input id="phone_number" type="text" class="form-control"  name="phone_number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address" class="col-md-4 control-label">Address</label>
+
+                            <div class="col-md-6">
+                            <input id="address" type="text" class="form-control" name="address" required>
+                            </div>
+                        </div>
+
+                        <input type="hidden" value="2" class="form-control" name="role_id">
+
+
+                        <div class="form-group" style="text-align:center">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
