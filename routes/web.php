@@ -38,6 +38,9 @@ Route::get('/content/dinner', function(){
 Route::get('/content/readymeals', function(){
     return view("content.readymeals");
 });
+Route::get('/profile', function(){
+    return view("content.profile");
+});
 
 Route::get('/logout',function(){
     Auth::logout();
