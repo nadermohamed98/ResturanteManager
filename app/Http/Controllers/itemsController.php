@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\item;
 
 class itemsController extends Controller
 {
@@ -15,6 +16,11 @@ class itemsController extends Controller
     public function index()
     {
         //
+    }
+
+    public function showallmenu(){
+        $items = Item::all();
+        return view('content.showallmenu')->with('items',$items);
     }
 
     /**

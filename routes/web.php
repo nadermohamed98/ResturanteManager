@@ -41,7 +41,11 @@ Route::get('/content/readymeals', function(){
 Route::get('/profile', function(){
     return view("content.profile");
 });
-
+Route::get('/editmenu', function(){
+    return view("content.editmenu");
+});
+Route::get('/showallusers', 'UsersController@showallusers');
+Route::get('/showallmenu', 'itemsController@showallmenu');
 Route::get('/logout',function(){
     Auth::logout();
     return view('/content.welcome');
@@ -51,4 +55,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('users','UsersController');
+Route::resource('items','ItemsController');
 

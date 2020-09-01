@@ -37,9 +37,9 @@
                             <hr>
                             <div class="text-center">
                                 <a href="/users/{{Auth::user()->id}}/edit" class="btn btn-primary">Edite profile</a><br><br>
-                                <a href="/edit" class="btn btn-danger">Edit the menu</a>
-                                <a href="/view" class="btn btn-danger">View menu</a>
-                                <a href="/view" class="btn btn-danger">View Users</a>
+                                <a href="/editmenu" class="btn btn-danger">Edit the menu</a>
+                                <a href="/showallmenu" class="btn btn-danger">View menu</a>
+                                <a href="/showallusers" class="btn btn-danger">View Users</a>
                             </div>
                             <hr>
                         </form>
