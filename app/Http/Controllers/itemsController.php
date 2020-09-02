@@ -30,7 +30,7 @@ class itemsController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.Additem');
     }
 
     /**
@@ -41,7 +41,15 @@ class itemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item();
+        $item->name = $request->input('name');
+        $item->Price = $request->input('Price');
+        $item->item_cat_id = $request->input('ItemCat');
+        $item->meal_type = $request->input('Mealtype');
+        $item->avilabilty = $request->input('avilabilty');
+        // $item->image_bath = $request->input('image_bath');
+        $item->save();
+        return redirect('/showallmenu')->with('success','item added successfully');
     }
 
     /**
@@ -63,7 +71,8 @@ class itemsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Item::find($id);
+        return view('content.editItem')->with('item',$item);
     }
 
     /**
@@ -75,7 +84,14 @@ class itemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = Item::find($id);
+        $item->name = $request->input('name');
+        $item->Price = $request->input('Price');
+        $item->item_cat_id = $request->input('item_cat_id');
+        $item->meal_type = $request->input('meal_type');
+        $item->avilabilty = $request->input('avilabilty');
+        $item->save();
+        return redirect('/showallmenu');
     }
 
     /**
@@ -86,6 +102,8 @@ class itemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Item::find($id);
+        $item->delete();
+        return redirect('/showallmenu');
     }
 }

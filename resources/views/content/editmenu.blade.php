@@ -16,5 +16,5 @@
                 <a href="/items/index" class="btn btn-danger" style="width:150px">GO</a>
             </div>
         </body>
-    </html> 
+    </html>
 @endsection

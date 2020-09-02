@@ -36,10 +36,10 @@
                             </div>
                             <hr>
                             <div class="text-center">
-                                <a href="/users/{{Auth::user()->id}}/edit" class="btn btn-primary">Edite profile</a><br><br>
-                                <a href="/editmenu" class="btn btn-danger">Edit the menu</a>
-                                <a href="/showallmenu" class="btn btn-danger">View menu</a>
-                                <a href="/showallusers" class="btn btn-danger">View Users</a>
+                                <a href="/users/{{Auth::user()->id}}/edit" class="btn btn-primary">Edite profile</a><hr>
+                                <a href="/items/create" class="btn btn-success">Add new item</a>
+                                <a href="/showallmenu" class="btn btn-success">View menu</a>
+                                <a href="/showallusers" class="btn btn-success">View Users</a>
                             </div>
                             <hr>
                         </form>
