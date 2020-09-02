@@ -19,9 +19,14 @@ class itemsController extends Controller
     }
 
     public function showallmenu(){
-        $items = Item::all();
+        $items = item::all();
         return view('content.showallmenu')->with('items',$items);
     }
+    public function showbreakfast(){
+        $items = item::all();
+        return view('content.breakfast')->with('items',$items);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,13 +46,27 @@ class itemsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'image_bath' => 'image|nullable|max:1999'
+        ]);
+
+        if($request->hasFile('image_bath')){
+            $fileNameWithExt = $request->file('image_bath')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extention = $request->file('image_bath')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extention;
+            $path = $request->file('image_bath')->storeAs('public/images/', $fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.png';
+        }
+
         $item = new Item();
         $item->name = $request->input('name');
         $item->Price = $request->input('Price');
         $item->item_cat_id = $request->input('ItemCat');
         $item->meal_type = $request->input('Mealtype');
         $item->avilabilty = $request->input('avilabilty');
-        // $item->image_bath = $request->input('image_bath');
+        $item->image_bath = $fileNameToStore;
         $item->save();
         return redirect('/showallmenu')->with('success','item added successfully');
     }
@@ -84,14 +103,29 @@ class itemsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'image_bath' => 'image|nullable|max:1999'
+        ]);
+
+        if($request->hasFile('image_bath')){
+            $fileNameWithExt = $request->file('image_bath')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extention = $request->file('image_bath')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extention;
+            $path = $request->file('image_bath')->storeAs('public/images/', $fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.png';
+        }
+
         $item = Item::find($id);
         $item->name = $request->input('name');
         $item->Price = $request->input('Price');
         $item->item_cat_id = $request->input('item_cat_id');
         $item->meal_type = $request->input('meal_type');
         $item->avilabilty = $request->input('avilabilty');
+        $item->image_bath = $fileNameToStore;
         $item->save();
-        return redirect('/showallmenu');
+        return redirect('/showallmenu')->with('success','item edited successfully');
     }
 
     /**

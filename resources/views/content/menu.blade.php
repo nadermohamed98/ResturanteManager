@@ -9,7 +9,7 @@
             <h1 style="font-family:algerian;color:#fff;text-align:center" >Food Categories</h1><br>
             <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
                 <h3 style="color:rgba(255,255,255,1)">Breakfast</h3>
-                <a href="/content/breakfast" class="btn btn-danger" style="width:150px">GO</a>
+                <a href="/breakfast" class="btn btn-danger" style="width:150px">GO</a>
             </div>
             <div class="well text-center" style="background-color:rgba(0,0,0,0.4)"> 
                 <h3 style="color:rgba(255,255,255,1)">Lunch</h3>

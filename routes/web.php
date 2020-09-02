@@ -26,9 +26,7 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view("content.ContactUs");
 });
-Route::get('/content/breakfast', function(){
-    return view("content.breakfast");
-});
+Route::get('/breakfast', 'itemsController@showbreakfast');
 Route::get('/content/lunch', function(){
     return view("content.lunch");
 });

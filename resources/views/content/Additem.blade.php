@@ -7,16 +7,16 @@
                 <div class="panel-heading">Add Item</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{action('itemsController@store')}}">
+                    <form class="form-horizontal" method="POST" action="{{action('itemsController@store')}}" enctype="multipart/form-data">
                     
                         {{ csrf_field() }}
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="image_bath" class="col-md-4 control-label">Image :</label>
 
                             <div class="col-md-6">
-                                <input id="image_bath" type="text" class="form-control" name="image_bath" value="{{ old('name') }}" >
+                                {{Form::file('image_bath')}}
                             </div>
-                        </div><hr> -->
+                        </div><hr>
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Item name :</label>
 
@@ -82,7 +82,6 @@
                             </div>
                         </div>
                     </form>
-                    @include('inc.messages')
                 </div>
             </div>
         </div>

@@ -1,80 +1,56 @@
-<!DOCTYPE html>
 @extends('layouts.app')
 @section('content')
-    <html>
         <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
             <style>
-                body{
-                    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url('../images/breakfast.jpg');
-                    background-size:cover;
-                    height:1000px;
-                }   
-                select{
-                    padding:8px 5px;
-                    width:450px;
-                    color:#333333;
-                    background-color:#eeeeee;
-                    border:1px solid #dddddd;
-                    cursor:pointer;
-                    border-radius:5px;
-                    text-align:center
-                }
-                select:focus,
-                select:hover{
-                    outline:none;
-                    border:1px solid black;
-                }
-                input{
+                /* div .img{
+                    float:left;
+                    margin:10px;
+                } */
+                /* div .info{
                     text-align:center;
-                    width:80px;
-                    height:40px;
-                    border-radius:10px
-                }
-                label{
+                    padding:20px
+                } */
+                div .item{
+                    background-color:rgba(0,0,0,0.3);
                     color:#fff;
+                    display:inline-block;
+                    width:48%;
+                    height:180px;
+                    border:solid;
+                    border-radius:15px;
+                    padding:10px;
+                    margin:10px
                 }
+                /* h3{
+                    font-family:Arial;
+                } */
             </style>
         </head>
-        <body>
+        <body style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url('../images/breakfast.jpg');background-size:cover">
             <h1 style="color:#fff;text-align:center;font-family:Algerian" >Make Your Breakfast</h1><br>
-            <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
-                <h3 style="color:rgba(255,255,255,1)">Main meal</h3>
-                <select>            
-                    <option name="eggs" value="eggs" >Eggs</option>
-                    <option>No meals available now</option>
-                </select>
-                <input type="text" placeholder="0.00"><label>$</label>
-            </div>
-            <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
-            <h3 style="color:rgba(255,255,255,1)">Drinks</h3>
-                <select>            
-                    <option name="eggs" value="eggs" >None</option>
-                    <option name="eggs" value="eggs" >Tee</option>
-                </select>
-                <input type="text" placeholder="0.00"><label>$</label>
-            </div>
-            <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
-                <h3 style="color:rgba(255,255,255,1)">Appetizers</h3>
-                <select>            
-                    <option name="eggs" value="eggs" >None</option>
-                    <option name="eggs" value="eggs" >Cheese appetizer</option>
-                </select>
-                <input type="text" placeholder="0.00"><label>$</label>
-            </div>
-            <div class="well text-center" style="background-color:rgba(0,0,0,0.3)"> 
-                <h3 style="color:rgba(255,255,255,1)">Dessert</h3>
-                <select>            
-                    <option name="eggs" value="eggs" >None</option>
-                    <option name="eggs" value="eggs" >Cheese cake</option>
-                    <option name="eggs" value="eggs" >Cup cake</option>
-                </select>
-                <input type="text" placeholder="0.00"><label>$</label>
-            </div>
-            <div style="text-align:center">
-            <label>Total price : </label><input type="text" placeholder="0.00"><label>$</label><br><br>
-            <a href="#" class="btn btn-primary" style="width:150px">Make Order</a>
-            </div>
+            @if(count($items)>0)
+                @foreach($items as $item)
+                    @if($item->meal_type == 1)
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <img style="width:150px;height:150px;border:1px solid;border-radius:250px" src="/storage/images/{{$item->image_bath}}">
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <h3>Name : {{$item->name}}</h3>
+                                    <h3>Price : {{$item->Price}} $</h3>
+                                    <label>Amount : </label>
+                                    <input style="color:black;width:50px" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+                <div style="text-align:center">
+                    <button class="btn btn-success" formaction="">Submit</button>
+                </div>
+            @else
+                <p>No items found</p>
+            @endif
         </body>
-    </html> 
 @endsection

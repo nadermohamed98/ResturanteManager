@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <h1>Edit Menu Item</h1>
-    {!! Form::open(['action'=>['itemsController@update',$item->id],'method'=>'POST']) !!}
+    {!! Form::open(['action'=>['itemsController@update',$item->id],'method'=>'POST','enctype' => 'multipart/form-data']) !!}
+        <div class="form-group">
+            {{Form::label('image','Image')}} 
+            {{Form::file('image_bath')}}
+        </div>
         <div class="form-group">
             {{Form::label('name','Name')}} 
             {{Form::text('name',$item->name,['class'=>'form-control','placeholder'=>'title'])}}
