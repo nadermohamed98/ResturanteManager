@@ -26,16 +26,11 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view("content.ContactUs");
 });
+
 Route::get('/breakfast', 'itemsController@showbreakfast');
-Route::get('/content/lunch', function(){
-    return view("content.lunch");
-});
-Route::get('/content/dinner', function(){
-    return view("content.dinner");
-});
-Route::get('/content/readymeals', function(){
-    return view("content.readymeals");
-});
+Route::get('/content/lunch', 'itemsController@showlunch');
+Route::get('/content/dinner', 'itemsController@showdinner');
+
 Route::get('/profile', function(){
     return view("content.profile");
 });

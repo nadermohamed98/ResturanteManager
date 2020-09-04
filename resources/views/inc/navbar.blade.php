@@ -11,12 +11,10 @@
                 <li><a href="/home">Home</a></li>
                 @if (Route::has('login'))                
                     @if (Auth::check())
-                        @if(Auth::user()->role_id==2)
-                            <li><a href="{{ url('/menu') }}">Menu</a></li>
-                        @endif
+                        <li><a href="{{ url('/menu') }}">Menu</a></li>
                     @endif
                     
-                    <li><a href="/about">About us</a></li>
+                    <!-- <li><a href="/about">About us</a></li> -->
                     <li><a href="/contact">Contact us</a></li>
                 @endif
             

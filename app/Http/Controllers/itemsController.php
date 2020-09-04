@@ -26,6 +26,14 @@ class itemsController extends Controller
         $items = item::all();
         return view('content.breakfast')->with('items',$items);
     }
+    public function showlunch(){
+        $items = item::all();
+        return view('content.lunch')->with('items',$items);
+    }
+    public function showdinner(){
+        $items = item::all();
+        return view('content.dinner')->with('items',$items);
+    }
 
 
     /**
@@ -68,7 +76,7 @@ class itemsController extends Controller
         $item->avilabilty = $request->input('avilabilty');
         $item->image_bath = $fileNameToStore;
         $item->save();
-        return redirect('/showallmenu')->with('success','item added successfully');
+        return redirect('/items/create')->with('success','item added successfully');
     }
 
     /**

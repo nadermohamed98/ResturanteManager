@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-md-2">
                                 <label>No </label>
-                                <input type="radio" name="avilabilty" value="2" checked><br>
+                                <input type="radio" name="avilabilty" value="0" checked><br>
                             </div>
                         </div><hr>
                         
@@ -79,6 +79,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Add New Item
                                 </button>
+                                <a href="/showallmenu" class="btn btn-primary">
+                                    Show all menu
+                                </a>
                             </div>
                         </div>
                     </form>

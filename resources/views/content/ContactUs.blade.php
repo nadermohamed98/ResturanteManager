@@ -16,7 +16,7 @@
 
             <style>
                 html, body {
-                    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1)),url('images/Ocean-View-Oceana-Restaurant-4.jpg');
+                    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/Ocean-View-Oceana-Restaurant-4.jpg');
                     background-size:cover;
                     height:1000px;
                 }
@@ -31,12 +31,12 @@
             <div class="full-height" style="color:white; font-family:Arial" >
                 <h1> We would love to hear from you! </h1>
                 <h2> To learn more about us, visit our <a href="/about">website</a><br> Please contact us on social media links : </h2>
-                <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a><br>
-                <a href="https://www.youtube.com/"><span class="fa fa-youtube"></span></a><br>
-                <a href="https://www.twitter.com/"><span class="fa fa-twitter"></span></a><br>
-                <a href="https://www.google.com/"><span class="fa fa-google"></span></a><br>
-                <a href="https://www.linkedin.com/"><span class="fa fa-linkedin"></span></a><br>
-                <a href="https://www.instagram.com/"><span class="fa fa-instagram"></span></a>
+                <a href="https://www.facebook.com/" target="_blank"><span class="fa fa-facebook"></span></a><br>
+                <a href="https://www.youtube.com/" target="_blank"><span class="fa fa-youtube"></span></a><br>
+                <a href="https://www.twitter.com/" target="_blank"><span class="fa fa-twitter"></span></a><br>
+                <a href="https://www.google.com/" target="_blank"><span class="fa fa-google"></span></a><br>
+                <a href="https://www.linkedin.com/" target="_blank"><span class="fa fa-linkedin"></span></a><br>
+                <a href="https://www.instagram.com/" target="_blank"><span class="fa fa-instagram"></span></a>
 
             </div>
         </body>
