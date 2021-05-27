@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Edit Items')
 @section('content')
     <h1>Edit Menu Item</h1>
     {!! Form::open(['action'=>['itemsController@update',$item->id],'method'=>'POST','enctype' => 'multipart/form-data']) !!}

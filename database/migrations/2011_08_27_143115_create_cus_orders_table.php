@@ -17,8 +17,6 @@ class CreateCusOrdersTable extends Migration
             $table->increments('id');
             $table->integer('cus_id')->unsigned();
             $table->foreign('cus_id')->references('id')->on('users');
-            $table->integer('order_id')->unsigned();
-            $table->foreign('order_id')->references('id')->on('order_items');
             $table->timestamps();
         });
     }

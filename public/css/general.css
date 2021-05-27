@@ -1,0 +1,295 @@
+html{
+    height: 100%;
+}
+
+.GeneralGeneral{
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* start General App Container */
+.GeneralBody{
+    padding-top: 70px;
+    min-height: 630px;
+}
+/* end General App Container */
+
+
+/* start Welcome */
+.bodyWelcome{
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('../images/2.jpg');
+        margin: 0;
+        font-family:'arial';
+}
+.Welcomcontent{
+    font-family: 'Algerian';
+    font-weight: 400;
+    color:#fff;
+    text-align: center;
+}
+.Welcomtitle {
+    font-size: 84px;
+    padding-top:60px
+}
+/* End Welcome */
+/* ############################################## */
+
+/* ############################################## */
+/* start home */
+.HomeBody{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/home1.jpg');
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    color:#fff;
+    margin: 0;
+}
+
+div .Homeitem{
+    background-color:rgba(0,0,0,0.6);
+    color:#fff;
+    display:inline-block;
+    width:48%;
+    height:210px;
+    border:solid 1px black;
+    border-radius:15px;
+    padding:10px;
+    margin:10px;
+    margin-top : 25px
+}
+
+div .Homesecond{
+    margin-bottom: 25px
+}
+
+/* End home */
+/* ############################################## */
+
+/* ############################################## */
+/* start Menu */
+.MenuBody{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url('../images/m.jpg');
+    background-size:cover;
+}
+.MenuH1{
+    font-family:algerian;
+    color:#fff;
+    text-align:center;
+}
+.MenuBox{
+    background-color:rgba(0,0,0,0.3);
+}
+.MenuBox h3{
+    color:rgba(255,255,255,1);
+} 
+.MenuBox a{
+    width:150px;
+}
+.ShowMenu{
+    background-color:rgba(0,0,0,0.8);
+    color:#fff;
+    display:inline-block;
+    width:48%;
+    height:275px;
+    border:solid;
+    border-radius:20px;
+    padding:10px;
+    margin:10px
+}
+.ShowMenu img{
+    width:150px;
+    height:150px;
+    border:1px solid;
+    border-radius:100px;
+    margin-top: 15px;
+}
+
+/* End Menu */
+/* ############################################## */
+
+/* ############################################## */
+/* start Items */
+.BreakfastBody{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),
+    url('../images/breakfast.jpg');
+    background-size:cover;
+}
+.BreakfastBody h1{
+    color:#fff;
+    text-align:center;
+    font-family:Algerian;
+}
+.OrderCartButton{
+    /* float:right; */
+    margin-top:5px
+}
+div .item{
+    background-color:rgba(0,0,0,0.3);
+    color:#fff;
+    display: inline-block;
+    width:48%;
+    height:210px;
+    border:solid 1px black;
+    border-radius:15px;
+    margin:10px
+}
+.item img{
+    width:150px;
+    height:150px;
+    border:1px solid;
+    border-radius:250px;
+    margin:25px 
+}
+.item .boxes label{
+    font-size:20px;
+    font:bold
+}
+.item .boxes a{
+    margin-top:10px;
+    border-radius:10px;
+    width:133px;
+}
+.item .boxes a i{
+    margin-right:5px;
+}
+/* ------------------------ */
+
+.LunchBody{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),
+    url('../images/lunch1.jpg');
+    background-size:cover;
+}
+.LunchBodyH1{
+    color:#fff;
+    text-align:center;
+    font-family:Algerian;
+}
+
+/* ------------------------ */
+.DinnerBody{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+    url('../images/dinner.jpg');
+    background-size:cover;
+}
+.DinnerH1{
+    color:#fff;
+    text-align:center;
+    font-family:Algerian;
+    padding-top:70px
+}
+/* ------------------------- */
+
+.SubmitOrderItems{
+    color:white;
+    width:110px;
+    border-radius:10px;
+    background-color:green;
+}
+.DeleteOrderItems{
+    color:white;
+    width:110px;
+    border-radius:10px;
+}
+.NoOrders{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: 230px;
+}
+
+/* End Items */
+/* ############################################## */
+/* ############################################## */
+/* start About Us */
+.AboutBody{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),
+    url('../images/restaurants.webp');
+    background-size:cover;
+    min-height: 700px;
+}
+.AboutH1{
+    font-family:arial;color:#fff
+}
+
+/* End About Us */
+/* ############################################## */
+
+/* ############################################## */
+/* start Contact Us */
+ .ContactBody{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../images/Ocean-View-Oceana-Restaurant-4.jpg');
+    background-size:cover;
+ }
+ .ContactH1{
+    font-size:70px
+}
+.ContactContent{
+    color:white; 
+    font-family:Arial
+}
+
+/* End Contact Us */
+/* ############################################## */
+/* ############################################## */
+/* start Profile */
+    
+
+/* End Profile */
+/* ############################################## */
+
+/* ############################################## */
+/* start Checkout */
+
+.PaymentClass{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* End Checkout */
+/* ############################################## */
+
+/* ############################################## */
+/* start Login */
+
+
+/* End Login */
+/* ############################################## */
+/* ############################################## */
+/* start Logout */
+
+
+/* End Logout */
+/* ############################################## */
+
+/* ############################################## */
+/* start navbar */
+
+.NavbarCart{
+    margin-top:2px;
+    font-size:19px;
+    border-radius: 15px;
+}
+
+/* End navbar */
+/* ############################################## */
+
+/* ############################################## */
+/* start footer */
+.FooterFoot{
+    background-color:rgba(0,0,0,0.9);
+    border-radius:5px;
+    /* padding:15px;
+    position:fixed bottom; */
+    margin-top:auto;
+}
+.FooterSection{
+    margin-top:30px
+}
+.FooterCopy{
+    background-color: rgba(0, 0, 0, 1)
+}
+/* End footer */
+/* ############################################## */
+
+

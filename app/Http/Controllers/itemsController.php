@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\item;
+use App\cus_order;
+use App\Cart;
+use Session;
+use Auth;
 
 class itemsController extends Controller
 {
@@ -22,14 +26,21 @@ class itemsController extends Controller
         $items = item::all();
         return view('content.showallmenu')->with('items',$items);
     }
+
     public function showbreakfast(){
+        // $cusOrder = new cus_order();
+        // $cusOrder->cus_id = Auth::user()->id;
+        // $cusOrder->save();
+        // $foundCusOrder = cus_order::find($cusOrder->cus_id);
         $items = item::all();
-        return view('content.breakfast')->with('items',$items);
+        return view('content.breakfast')->with('items',$items);/*->with('foundCusOrder',$foundCusOrder)*/
     }
+
     public function showlunch(){
         $items = item::all();
         return view('content.lunch')->with('items',$items);
     }
+    
     public function showdinner(){
         $items = item::all();
         return view('content.dinner')->with('items',$items);
@@ -148,4 +159,50 @@ class itemsController extends Controller
         $item->delete();
         return redirect('/showallmenu');
     }
+
+    public function addToCart(Request $request, $id){
+        $item = item::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        // print_r ($oldCart);
+        $cart = new Cart($oldCart);
+        $cart->add($item, $item->id);
+
+        $request->session()->put('cart',$cart);
+        // dd($request->session()->get('cart'));
+        return redirect()->back();
+    }
+
+    public function deleteFromCart($item , $id)
+    {
+        $cart = Session::get('cart');
+        $cart->delete($item, $id);
+        return redirect('/submitorder');
+    }
+
+    public function DestroyAllCart()
+    {
+        $cart = Session::get('cart');
+        $cart->DestroyAllCart();
+        return redirect()->back();
+    }
+
+    public function GetCart(){
+        if(!Session::has('cart')){
+            return view('content.submitorder', ['items', null]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart); 
+        return view('content.submitorder',['items' => $cart->items, 'totalPrice' => $cart->TotalPrice]);
+    }
+
+    public function getcheckout(){
+        if(!Session::has('cart')){
+            return view('content.submitorder');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart); 
+        $totlaPrice = $cart->TotalPrice;
+        return view('content.checkout', ['TotalPrice'=>$totlaPrice]);
+    }
+    
 }

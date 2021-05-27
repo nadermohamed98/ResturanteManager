@@ -26,8 +26,26 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view("content.ContactUs");
 });
-
-Route::get('/breakfast', 'itemsController@showbreakfast');
+Route::get('/submitorder', function(){
+    return view("content.submitorder");
+});
+Route::get('/add-to-cart/{id}',[
+    'uses' => 'itemsController@addToCart',
+    'as' => 'addToCart'
+]);
+Route::get('/remove-from-cart/{item}/{id}',[
+    'uses' => 'itemsController@deleteFromCart',
+    'as' => 'deleteFromCart'
+]);
+Route::get('/destroyAllCart',[
+    'uses' => 'itemsController@DestroyAllCart',
+    'as' => 'deleteAllCart'
+]);
+Route::get('/submitorder',[
+    'uses' => 'itemsController@GetCart',
+    'as' => 'GetCart'
+]);
+Route::get('/content/breakfast', 'itemsController@showbreakfast');
 Route::get('/content/lunch', 'itemsController@showlunch');
 Route::get('/content/dinner', 'itemsController@showdinner');
 
@@ -39,7 +57,11 @@ Route::get('/additem', function(){
 });
 Route::get('/showallusers', 'UsersController@showallusers');
 Route::get('/showallmenu', 'itemsController@showallmenu');
+
 Route::get('/logout',function(){
+    if(Session::has('cart')){
+        Session::forget('items');
+    } 
     Auth::logout();
     return view('/content.welcome');
 });
@@ -47,7 +69,11 @@ Route::get('/logout',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/content/checkout', 'itemsController@getcheckout');
+
 
 Route::resource('users','UsersController');
 Route::resource('items','itemsController');
+Route::resource('order_items','order_itemsController');
+Route::resource('cus_order','cus_orderController');
 

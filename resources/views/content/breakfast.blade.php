@@ -1,61 +1,40 @@
 @extends('layouts.app')
+@section('title','BreakFast')
 @section('content')
-        <head>
-            <style>
-                /* div .img{
-                    float:left;
-                    margin:10px;
-                } */
-                /* div .info{
-                    text-align:center;
-                    padding:20px
-                } */
-                div .item{
-                    background-color:rgba(0,0,0,0.3);
-                    color:#fff;
-                    display:inline-block;
-                    width:48%;
-                    height:180px;
-                    border:solid;
-                    border-radius:15px;
-                    padding:10px;
-                    margin:10px
-                }
-                /* h3{
-                    font-family:Arial;
-                } */
-            </style>
-        </head>
-        <body style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url('../images/breakfast.jpg');background-size:cover">
-            <div>
-                <div style="float:right">
-                    <button class="btn btn-primary" formaction="">Submit Order</button>
+        <body class="BreakfastBody">
+            <form method="POST" action="{{action('order_itemsController@store')}}">
+            {{ csrf_field() }}
+                <div>
+                    <h1>Make Your Breakfast</h1><br>
                 </div>
-                <h1 style="color:#fff;text-align:center;font-family:Algerian" >Make Your Breakfast</h1><br>
-            </div>
-            @if(count($items)>0)
-                @foreach($items as $item)
-                    @if($item->meal_type == 1 && $item->avilabilty == 1)
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4">
-                                    <img style="width:150px;height:150px;border:1px solid;border-radius:250px" src="/storage/images/{{$item->image_bath}}">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <h4>Name : {{$item->name}}</h4>
-                                    <h4>Price : {{$item->Price}} $</h4><br><br>
-                                    <label>Amount : </label>
-                                    <input style="color:black;width:50px" type="text">
-                                </div>
-                                <div Class="col-md-2 col-sm-2">
-                                    <button class="btn btn-danger" formaction="">Order</button>
+                @if(count($items)>0)
+                    @foreach($items as $item)
+                        @if($item->meal_type == 1 && $item->avilabilty == 1)
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <img src="/storage/images/{{$item->image_bath}}">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 boxes">
+                                        <input name="name" type="hidden" value="{{$item->name}}">
+                                        <h3>Name : {{$item->name}}</h3>
+                                        <h4>Price : {{$item->Price}} $</h4><hr>
+                                        <!-- <label for="amount">Amount : </label> -->
+                                        <!-- <input id="amount" name="amount" type="text" value=" " style="color:black;width:70px;border:1px solid black;border-radius:10px"> -->
+                                        <!-- <input name="cus_id" type="hidden" value="{{Auth::user()->id}}">
+                                        <input name="item_id" type="hidden" value="{{$item->id}}">
+                                        <input name="item_price" type="hidden" value="{{$item->price}}"> -->
+                                        <a href="{{route('addToCart', ['id' => $item->id])}}" 
+                                        role="button" class="btn btn-danger">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Order</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endif
-                @endforeach
-            @else
-                <p>No Breakfast items found</p>
-            @endif
+                        @endif
+                    @endforeach
+                @else
+                    <p>No Breakfast items found</p>
+                @endif
+            </form>
         </body>
 @endsection

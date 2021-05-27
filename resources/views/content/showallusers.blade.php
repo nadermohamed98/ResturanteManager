@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','All Users')
 @section('content')
 
     <h1>Users</h1>

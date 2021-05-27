@@ -1,15 +1,14 @@
 @extends('layouts.app')
+@section('title','All Menu')
 @section('content')
     <h1>Menu Items</h1>
     @if (count($items)>0)
         @foreach ($items as $item)
             
-                <div style="background-color:rgba(0,0,0,0.7);color:#fff;display:inline-block;
-                    width:48%;height:230px;border:solid;border-radius:15px;
-                    padding:10px;margin:10px">
+                <div class="ShowMenu">
                     <div class="row">
                         <div class="col-md-4 col-sm-4"> 
-                        <img style="width:150px;height:150px;border:1px solid;border-radius:100px" src="/storage/images/{{$item->image_bath}}">
+                        <img src="/storage/images/{{$item->image_bath}}">
                         </div>
                         <div class="col-md-8 col-sm-8">
                         <p>Item Name : <b>{{$item->name}}</b></p>
@@ -34,7 +33,7 @@
                             @endif
                         </p>
                         </div>
-                    </div>
+                    </div><hr>
                     {!! Form::open(['action'=>['itemsController@destroy',$item->id],'method'=>'POST'] )!!}
                     {{Form::hidden('_method','DELETE')}}
                     <a href="/items/{{$item->id}}/edit" class="btn btn-primary">Edit</a>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\order_item;
+use App\cus_order;
 
 class order_itemsController extends Controller
 {
@@ -35,7 +37,14 @@ class order_itemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Orderitem = new order_item();
+        $Orderitem->cus_id = $request->input('cus_id');
+        $Orderitem->order_id = $request->input('order_id');
+        $Orderitem->item_id = $request->input('item_id');
+        $Orderitem->item_price = $request->input('item_price');
+        $Orderitem->item_amount = $request->input('amount');
+        $Orderitem->save();
+        return redirect('/breakfast')->with('success','item added');
     }
 
     /**

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Edit Profile')
 @section('content')
     <h1>Edit information</h1>
     {!! Form::open(['action'=>['UsersController@update',$user->id],'method'=>'POST']) !!}

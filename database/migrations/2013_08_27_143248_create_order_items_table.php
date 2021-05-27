@@ -17,6 +17,8 @@ class CreateOrderItemsTable extends Migration
             $table->increments('id');
             $table->integer('cus_id')->unsigned();
             $table->foreign('cus_id')->references('id')->on('users');
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('cus_orders');
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
             $table->integer('item_price')->unsigned();
