@@ -14,7 +14,7 @@
                         <li><a href="{{ url('/menu') }}"><i class="fa fa-clone"></i> Menu</a></li>
                     @endif
                     
-                    <li><a href="/about"><i class="fa fa-user"></i> About us</a></li>
+                    <li><a href="/about"><i class="fa fa-users"></i> About us</a></li>
                     <li><a href="/contact"><i class="fa fa-phone"></i> Contact us</a></li>
                 @endif
             
@@ -31,12 +31,12 @@
                 <!-- </div>    -->
                         @if(Auth::user()->role_id==1)
                         
-                            <li><a href="/profile"><i class="fa fa-edit"></i> Profile page</a></li>
+                            <li><a href="/profile"><i class="fa fa-user-o "></i> Profile page</a></li>
                         @endif
-                        <li><a href="{{ url('/logout') }}"><i class="fa fa-angellist"></i> logout</a></li>
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-unlock-alt "></i> logout</a></li>
                     @else
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}"><i class="fa fa-unlock-alt "></i> Login</a></li>
+                        <li><a href="{{ url('/register') }}"><i class="fa fa-user-plus"></i> Register</a></li>
                     @endif
                 @endif   
                 <!-- <li class="nav-item dropdown">
