@@ -176,7 +176,7 @@ class itemsController extends Controller
     {
         $cart = Session::get('cart');
         $cart->delete($item, $id);
-        return redirect('/submitorder');
+        return redirect()->back();
     }
 
     public function DestroyAllCart()

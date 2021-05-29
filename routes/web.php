@@ -60,7 +60,7 @@ Route::get('/showallmenu', 'itemsController@showallmenu');
 
 Route::get('/logout',function(){
     if(Session::has('cart')){
-        Session::forget('items');
+        Session::flush();
     } 
     Auth::logout();
     return view('/content.welcome');

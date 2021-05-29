@@ -25,7 +25,7 @@
                      <!-- <div class="OrderCartButton"> -->
                     <a class="btn btn-primary NavbarCart" href="/submitorder"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 
                         <span class="badge">
-                           ( {{ Session::has('cart') ? Session::get('cart')->TotalQny : '0' }} )
+                           {{ Session::has('cart') ? Session::get('cart')->TotalQny : '0' }}
                         </span>
                     </a>
                 <!-- </div>    -->

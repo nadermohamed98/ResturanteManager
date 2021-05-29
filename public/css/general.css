@@ -55,7 +55,7 @@ div .Homeitem{
     border-radius:15px;
     padding:10px;
     margin:10px;
-    margin-top : 25px
+    margin-top : 25px;
 }
 
 div .Homesecond{
@@ -120,8 +120,8 @@ div .Homesecond{
     font-family:Algerian;
 }
 .OrderCartButton{
-    /* float:right; */
-    margin-top:5px
+    /* display: inline-block; */
+    margin-top:7px
 }
 div .item{
     background-color:rgba(0,0,0,0.3);
@@ -266,10 +266,18 @@ div .item{
 /* start navbar */
 
 .NavbarCart{
-    margin-top:2px;
+    margin-top:3px;
     font-size:19px;
     border-radius: 15px;
+    background-color: rgba(0,0,0,0.1);
+    color: rgba(255,255,255,0.7);
+    border:1px solid rgba(0,0,0,0.1);
 }
+.NavbarCart:hover{
+    background-color: rgba(0,0,0,0.6);
+    border:1px solid rgba(0,0,0,0.6)
+}
+
 
 /* End navbar */
 /* ############################################## */
