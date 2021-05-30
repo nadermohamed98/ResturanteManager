@@ -44,8 +44,26 @@ html{
     color:#fff;
     margin: 0;
 }
+
+.HomeBody .hedding{
+    text-align: center;
+}
 .top .Homeitem, .bottom .Homeitem{
-    background-color:rgba(0,0,0,0.6);
+    background-color:rgba(255,255,255,0.7);
+    color:black;
+    font-size: bold;
+    display:inline-block;
+    width:48%;
+    height:210px;
+    border:solid 1px white;
+    border-radius:15px;
+    padding:10px;
+    margin:10px;
+    margin-top : 25px;
+}
+
+.top .Homesecond, .bottom .Homesecond{
+    background-color:rgba(0,0,0,0.85);
     color:#fff;
     display:inline-block;
     width:48%;
@@ -56,7 +74,6 @@ html{
     margin:10px;
     margin-top : 25px;
 }
-
 
 
 /* End home */
@@ -320,8 +337,8 @@ div .item{
     animation-name: cfFadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-delay: 5s;
-    animation-duration: 5s;
+    animation-duration: 8s;
+    animation-delay: 8s;
     animation-direction: alternate;
     grid-area:overlap;
 }
@@ -331,7 +348,7 @@ div .item{
     animation-name: cfFadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-direction: alternate;
     grid-area:overlap;
 
@@ -341,10 +358,10 @@ div .item{
     0% {
         opacity:1;
     }
-    45% {
-        opacity:1;
-    }
     55% {
+        opacity:0.04;
+    }
+    99% {
         opacity:0;
     }
     100% {
